@@ -1,0 +1,30 @@
+// _header.scss
+@use 'variaveis';
+@use 'mixins';
+
+header {
+    background-color: variaveis.$primary-color;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+header .container {
+    @include mixins.flex-center;
+    justify-content: space-between;
+    padding: variaveis.$container-padding 0;
+}
+
+.menu {
+    @include mixins.flex-center;
+}
+
+.menu li {
+    font-weight: bold;
+    margin-left: 24px;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+}

@@ -1,0 +1,53 @@
+// _section.scss
+@use 'variaveis';
+@use 'mixins';
+
+section {
+    padding: variaveis.$section-padding 0;
+}
+
+.products {
+    margin-top: 40px;
+    @include mixins.product-grid(3);
+}
+
+.product-item img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+.product-button {
+    display: block;
+    background-color: variaveis.$secondary-color;
+    color: #fff;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 8px;
+    margin-top: 8px;
+    text-decoration: none;
+
+    &:hover {
+        background-color: variaveis.$hover-color;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .container {
+        max-width: 80%;
+}
+
+    .products {
+        @include mixins.product-grid(2);
+        column-gap: 3%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .products {
+        display: block;
+}
+
+.product-item {
+        margin-bottom: variaveis.$product-margin-bottom;
+    }
+}
